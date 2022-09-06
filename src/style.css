@@ -1,9 +1,8 @@
 table {
-    width: 100%;
-    /* table-layout: fixed; */
-    border: 1px solid;
-
-  }
+  width: 100%;
+  /* table-layout: fixed; */
+  border: 1px solid;
+}
 
 table tr th {
   padding: 3px;
@@ -11,7 +10,6 @@ table tr th {
   background: gray;
   /* color: white; */
   border: 1px solid;
-
 }
 
 textarea {
