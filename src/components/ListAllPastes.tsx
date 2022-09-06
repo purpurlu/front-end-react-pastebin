@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../style.css"
+import MyCard from "./Card";
+import { Row } from "react-bootstrap";
 
 interface Paste {
     paste_id: number,
@@ -26,7 +28,7 @@ function ListAllPastes(): JSX.Element{
 
     return (
         <div className="text-center">
-            <table>
+            {/* <table>
                 <thead> 
                 <tr>
                     <th>Title</th>
@@ -43,7 +45,20 @@ function ListAllPastes(): JSX.Element{
                     )
                 })}
                 </tbody>
-            </table>
+            </table> */}
+            <Row>
+                {pastes.map((paste, index) => {
+                    return (
+
+                        <MyCard 
+                        title={paste.title} 
+                        paste_id={paste.paste_id} 
+                        body={paste.body} 
+                        key={index} />
+                    )
+                })}
+            </Row>
+            
         </div>
     )
 }

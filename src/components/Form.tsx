@@ -12,7 +12,8 @@ interface PasteBinInput extends HTMLFormElement {
 }
 
 function Form(): JSX.Element {
-    //const [paste, setPaste] = useState('')
+    //const [paste, setPaste] = useState('')\
+    
     const api_url = process.env.REACT_APP_LOCAL ? process.env.REACT_APP_API_LOCAL : process.env.REACT_APP_API_HEROKU
     const onSubmitForm = async (e: React.FormEvent<PasteBinInput>) => {
             e.preventDefault();
@@ -23,9 +24,7 @@ function Form(): JSX.Element {
             try{
                 const pasteData = {title, body}
                 const response = await axios.post(`${api_url}pastes/`, pasteData)
-                //window.location.href = "/"
                 console.log(response)
-                //console.log(response)
             }
             catch(err) {
                 console.error(err)
@@ -35,11 +34,11 @@ function Form(): JSX.Element {
             <div className="text-center">
                 <h3> CREATE A NEW PASTE</h3>
                 <form onSubmit={onSubmitForm}> 
-                    <input className="input" type="text" name="title" placeholder="paste title"
+                    <input className="form-control" type="text" name="title" placeholder="paste title"
                     />
-                    <textarea rows={10} name="body" placeholder="paste body">
+                    <textarea className="form-control" rows={10} name="body" placeholder="paste body">
                     </textarea>
-                    <button className="mybutton">Add</button>
+                    <button className="btn btn-danger" style={{width:'100%'}}>Add</button>
                 </form>
             </div>
         )

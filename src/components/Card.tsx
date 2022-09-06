@@ -8,11 +8,16 @@ interface Paste {
 }
 
 export default function MyCard(props: Paste): JSX.Element {
+
     return (
-        <Card>
+        <Card style={{ width: '40rem', margin: '10px' }}>
+            <Card.Title>
+                {props.title}
+            </Card.Title>
             <Card.Body>
-                {props.body}
+                <code> {props.body} </code>
             </Card.Body>
+            <button className="dots">...</button>
         </Card>
     )
 }
