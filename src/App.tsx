@@ -1,10 +1,10 @@
 import Form from "./components/Form";
 import ListAllPastes from "./components/ListAllPastes";
-import "./buttondots.css";
 import { Container } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 
 function App(): JSX.Element {
+  const [refresh, setRefresh] = useState(false);
   return (
     <Container>
       <div className="text-center">
@@ -12,10 +12,10 @@ function App(): JSX.Element {
           <h1>NEHA'S AND LAURA'S PASTEBIN</h1>
         </div>
         <div className="text-center">
-          <Form />
+          <Form setRefresh={setRefresh} />
         </div>
         <div className="text-center">
-          <ListAllPastes />
+          <ListAllPastes refresh={refresh} />
         </div>
       </div>
     </Container>
