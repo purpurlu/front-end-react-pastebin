@@ -11,10 +11,10 @@ interface Paste {
 }
 
 interface RefreshProps {
-    refresh: boolean
+  refresh: boolean;
 }
 
-function ListAllPastes({refresh} : RefreshProps): JSX.Element {
+function ListAllPastes({ refresh }: RefreshProps): JSX.Element {
   const [pastes, setPastes] = useState<Paste[]>([]);
 
   useEffect(() => {
