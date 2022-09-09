@@ -9,7 +9,9 @@ interface Paste {
 }
 
 export default function MyCard(props: Paste): JSX.Element {
-  const shortPaste = props.body ? props.body.split("\n").splice(0, 5).join("\n") : props.body;
+  const shortPaste = props.body
+    ? props.body.split("\n").splice(0, 5).join("\n")
+    : props.body;
   const [revealedPaste, setRevealedPaste] = useState("");
 
   function revealPaste() {
